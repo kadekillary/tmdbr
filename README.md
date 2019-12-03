@@ -223,3 +223,10 @@ Classes ‘tbl_df’, ‘tbl’ and 'data.frame':	1 obs. of  9 variables:
  3 Rose Byrne              28.7  Female Acting                  9827
  4 Cho Yeo-jeong           31.2  Female Acting                556435
 ```
+
+## Tests
+
+* Run all tests
+```r
+devtools::test()
+```

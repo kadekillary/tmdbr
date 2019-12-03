@@ -1,0 +1,11 @@
+#' Get all of the alternative titles for a movie
+#'
+#' @param imdb_id string : imdb id for a movie
+#' @param section string : do not alter, sets the section to movies
+#'
+#' @return tibble : representing alternative titles for a movie
+#' @export
+movie_get_alternative_titles <- function(imdb_id, section = 'movie') {
+  endpoint <- glue::glue('{imdb_id}/alternative_titles')
+  tibble::as_tibble(request(section, endpoint)$titles)
+}

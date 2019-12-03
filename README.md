@@ -228,5 +228,7 @@ Classes ‘tbl_df’, ‘tbl’ and 'data.frame':	1 obs. of  9 variables:
 
 * Run all tests
 ```r
+library(devtools)
+
 devtools::test()
 ```

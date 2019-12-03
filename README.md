@@ -1,6 +1,5 @@
-![logo](https://www.themoviedb.org/assets/2/v4/logos/408x161-powered-by-rectangle-green-bb4301c10ddc749b4e79463811a68afebeae66ef43d17bcfd8ff0e60ded7ce99.png)
+![logo](https://www.themoviedb.org/assets/2/v4/logos/powered-by-rectangle-green-dcada16968ed648d5eb3b36bbcfdd8cdf804f723dcca775c8f2bf4cea025aad6.svg)
 
-> The Movie Database R package.
 
 ## Installation
 
@@ -22,7 +21,7 @@ API_KEY = fa7s9d8f9a8sd7fsa8das8df8asd79
 
 ## Usage
 
-In order to call most functions you will need the `IMDB_ID` for the movie. Additionally, for person data you will need to retrieve their ID from TMDB.
+In order to call most functions you will need the `IMDB_ID` for a movie. Additionally, for person related data you will need to retrieve their ID from TMDb.
 
 * Get Movie Details
 ```r
@@ -83,7 +82,7 @@ In order to call most functions you will need the `IMDB_ID` for the movie. Addit
 
 * Get Similar Movies
 ```r
-<--R--> movie_get_similar('tt2488496')
+> movie_get_similar('tt2488496')
 # A tibble: 20 x 7
    title          overview                      vote_count vote_average popularity release_date     id
    <chr>          <chr>                              <int>        <dbl>      <dbl> <chr>         <int>

@@ -5,7 +5,7 @@ test_that('movie_get_alternative_titles() : returns correct type', {
 })
 
 test_that('movie_get_alternative_titles() : correct number of columns', {
-  expect_equal(ncol(movie_get_alternative_titles('tt2488496')), 3)
+  expect_equal(ncol(movie_get_alternative_titles('tt2488496')), 2)
 })
 
 test_that('movie_get_alternative_titles() : correct number of rows', {

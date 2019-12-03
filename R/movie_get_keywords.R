@@ -7,5 +7,6 @@
 #' @export
 movie_get_keywords <- function(imdb_id, section = 'movie') {
   endpoint <- glue::glue('{imdb_id}/keywords')
-  tibble::as_tibble(request(section, endpoint)$keywords)
+  tibble::as_tibble(request(section, endpoint)$keywords) %>%
+    dplyr::select(name, id)
 }

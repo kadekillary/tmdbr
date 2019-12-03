@@ -7,5 +7,6 @@
 #' @export
 movie_get_alternative_titles <- function(imdb_id, section = 'movie') {
   endpoint <- glue::glue('{imdb_id}/alternative_titles')
-  tibble::as_tibble(request(section, endpoint)$titles)
+  tibble::as_tibble(request(section, endpoint)$titles) %>%
+    dplyr::select(title, type)
 }

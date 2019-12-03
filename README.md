@@ -25,12 +25,23 @@ In order to call most functions you will need the `IMDB_ID` for a movie. Additio
 
 * Get Movie Details
 ```r
-> movie_get_details('tt2488496')
-# A tibble: 1 x 15
-  title tagline budget revenue release_date runtime status vote_count vote_average popularity overview
-  <chr> <chr>    <int>   <int> <chr>          <int> <chr>       <int>        <dbl>      <dbl> <chr>   
-1 Star… Every … 2.45e8  2.07e9 2015-12-15       136 Relea…      13252          7.4       42.0 Thirty …
-# … with 4 more variables: imdb_id <chr>, id <int>, genres <chr>, production_companies <chr>
+> str(movie_get_details('tt2488496'))
+Classes ‘tbl_df’, ‘tbl’ and 'data.frame':	1 obs. of  15 variables:
+ $ title               : chr "Star Wars: The Force Awakens"
+ $ tagline             : chr "Every generation has a story."
+ $ budget              : int 245000000
+ $ revenue             : int 2068223624
+ $ release_date        : chr "2015-12-15"
+ $ runtime             : int 136
+ $ status              : chr "Released"
+ $ vote_count          : int 13252
+ $ vote_average        : num 7.4
+ $ popularity          : num 42
+ $ overview            : chr "Thirty years after defeating the Galactic Empire, Han Solo and his allies face a new threat from the evil Kylo "| __truncated__
+ $ imdb_id             : chr "tt2488496"
+ $ id                  : int 140607
+ $ genres              : chr "Action, Adventure, Science Fiction, Fantasy"
+ $ production_companies: chr "Truenorth Productions, Lucasfilm, Bad Robot"
 ```
 
 * Get Movie Cast
@@ -60,24 +71,25 @@ In order to call most functions you will need the `IMDB_ID` for a movie. Additio
 * Get Alternative Movie Titles
 ```r
 > movie_get_alternative_titles('tt2488496')
-# A tibble: 10 x 3
-   iso_3166_1 title                                         type                           
-   <chr>      <chr>                                         <chr>                          
- 1 US         Star Wars - Episode 7 - The Force Awakens     ""                             
- 2 US         Star Wars 7                                   short title                    
- 3 US         Star Wars Episode VII - The Force Awakens     bring in line with other movies
- 4 US         Star Wars The Force Awakens                   no special characters in name  
+# A tibble: 10 x 2
+   title                                         type                           
+   <chr>                                         <chr>                          
+ 1 Star Wars - Episode 7 - The Force Awakens     ""                             
+ 2 Star Wars 7                                   short title                    
+ 3 Star Wars Episode VII - The Force Awakens     bring in line with other movies
+ 4 Star Wars The Force Awakens                   no special characters in name  
 ```
 
 * Get Movie Keywords
 ```r
 > movie_get_keywords('tt2488496')
 # A tibble: 6 x 2
-      id name       
-   <int> <chr>      
-1    803 android    
-2   1612 spacecraft 
-3  10527 jedi       
+  name            id
+  <chr>        <int>
+1 android        803
+2 spacecraft    1612
+3 jedi         10527
+4 imax        156395     
 ```
 
 * Get Similar Movies
@@ -175,11 +187,17 @@ downloaded 198 KB
 
 * Get Person Details
 ```r
-> person_get_details(1)
-# A tibble: 1 x 9
-  name   birthday  known_for_depar… gender biography          popularity place_of_birth  imdb_id    id
-  <chr>  <chr>     <chr>            <chr>  <chr>                   <dbl> <chr>           <chr>   <int>
-1 Georg… 1944-05-… Directing        Male   "George Walton Lu…       8.69 Modesto, Calif… nm0000…     1
+> str(person_get_details(1))
+Classes ‘tbl_df’, ‘tbl’ and 'data.frame':	1 obs. of  9 variables:
+ $ name                : chr "George Lucas"
+ $ birthday            : chr "1944-05-14"
+ $ known_for_department: chr "Directing"
+ $ gender              : chr "Male"
+ $ biography           : chr "George Walton Lucas Jr. (born May 14, 1944) is an American filmmaker and entrepreneur. Lucas is known for creat"| __truncated__
+ $ popularity          : num 8.69
+ $ place_of_birth      : chr "Modesto, California, USA"
+ $ imdb_id             : chr "nm0000184"
+ $ id                  : int 1
 ```
 
 * Get Person Movie Credits

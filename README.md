@@ -8,7 +8,7 @@ Install from Github
 ```r
 library(devtools)
 
-devtools::install_github('Solstice-Studios/tmdbr')
+devtools::install_github('kadekillary/tmdbr')
 ```
 
 ## Authentication
